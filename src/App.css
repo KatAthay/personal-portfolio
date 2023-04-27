@@ -81,6 +81,27 @@ p.success {
 p.danger {
 	color: red;
 }
+
+/************ Carousel ************/
+.carousel {
+  position: relative;
+  /* add any other styling needed for your carousel */
+}
+
+.carousel .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  /* adjust the left and right values to push the arrows out to the edges */
+}
+
+.carousel .arrow.left {
+  left: 0;
+}
+
+.carousel .arrow.right {
+  right: 0;
+}
 /************ Navbar Css ************/
 nav.navbar {
   padding: 18px 0;
@@ -306,7 +327,13 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   position: relative;
 }
 .skill-bx {
-  background: #151515;
+  background: rgba( 255, 255, 255, 0.25 );
+  box-shadow: 0 8px 32px 0 rgba(232, 230, 235, 0.37);
+  backdrop-filter: blur( 3px );
+  -webkit-backdrop-filter: blur( 3px );
+  border-radius: 10px;
+  border: 1px solid rgba( 255, 255, 255, 0.18 );
+  /* background: #038cc247; */
   border-radius: 64px;
   text-align: center;
   padding: 60px 50px;
@@ -345,7 +372,11 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   padding: 80px 0;
   position: relative;
   background-color: black;
+  display: flex;
+  flex-wrap: wrap;
 }
+
+
 .project h2 {
 	font-size: 45px;
 	font-weight: 700;
@@ -368,7 +399,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   overflow: hidden;
 }
 .project .nav.nav-pills .nav-item {
-  width: 33.33333%;
+  width: 25%;
 }
 .project .nav.nav-pills .nav-link {
   background-color: transparent;
@@ -411,6 +442,10 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
 }
 .nav-link#projects-tabs-tab-third {
   border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 0 -1px 55px 0;
+}
+.nav-link#projects-tabs-tab-fourth {
+  border: 1px solid rgba(255, 255, 255, 0.5);
   border-radius: 0 55px 55px 0;
 }
 .proj-imgbx {
@@ -418,6 +453,7 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   border-radius: 30px;
   overflow: hidden;
   margin-bottom: 24px;
+
 }
 .proj-imgbx::before {
   content: "";
