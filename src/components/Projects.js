@@ -14,23 +14,31 @@ export const Projects = () => {
       title: 'Mixuxe',
       description: 'Bootstrap Author Website',
       imgUrl: Mixuxe,
+      websiteLink: 'https://katathay.github.io/Mixuxe/',
+       githubLink: 'https://github.com/KatAthay/Mixuxe',
     },
     {
       title: 'Nemesis',
       description:
         'Application that performs API calls to Twitter with specified user and search terms returned.',
       imgUrl: Twitter,
+      websiteLink: 'https://katathay.github.io/Mixuxe/',
+      githubLink: 'https://github.com/KatAthay/Mixuxe',
     },
     {
       title: 'Application & Algo Tracker',
       description:
         "Application to track application, interviews, & algorithms you've completed.",
       imgUrl: InterviewTracker,
+      websiteLink: 'https://katathay.github.io/Mixuxe/',
+      githubLink: 'https://github.com/KatAthay/Mixuxe',
     },
     {
       title: 'Ad3lie',
       description: 'D3.js modularizations as reusable React components.',
       imgUrl: Ad3lie,
+      websiteLink: 'https://www.ad3lie.dev',
+      githubLink: 'https://github.com/oslabs-beta/ad3lie',
     },
   ];
 
@@ -47,28 +55,11 @@ export const Projects = () => {
                   }
                 >
                   <h2>Projects</h2>
-                  <p>
+                  {/* <p>
                     Recents Projects include the repository link and the website link if applicable. 
-                  </p>
+                  </p> */}
                   <Tab.Container id='projects-tabs' defaultActiveKey='first'>
-                    {/* <Nav
-                      variant='pills'
-                      className='nav-pills mb-5 justify-content-center align-items-center'
-                      id='pills-tab'
-                    >
-                      <Nav.Item>
-                        <Nav.Link eventKey='first'>Projects Tab 1</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey='second'>Projects Tab 2</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey='third'>Projects Tab 3</Nav.Link>
-                      </Nav.Item>
-                      <Nav.Item>
-                        <Nav.Link eventKey='fourth'>Projects Tab </Nav.Link>
-                      </Nav.Item>
-                    </Nav> */}
+
                     
                     <Tab.Content
                       id='slideInUp'
@@ -76,27 +67,22 @@ export const Projects = () => {
                         isVisible ? 'animate__animated animate__slideInUp' : ''
                       }
                     >
-                      <Tab.Pane eventKey='first'>
-                        <Row>
+                    
+                      {projects.map((project, index) => (
+                          <div key={index} className="mb-5">
+                            <ProjectCard {...project} />
+                            <div className="d-flex justify-content-center">
+                              <a href="#website-link">Website Link</a>
+                              <span className="mx-2">|</span>
+                              <a href="#github-link">GitHub Link</a>
+                            </div>
+                          </div>
+                        ))}
+                        {/* <Row>
                           {projects.map((project, index) => {
-                            return <ProjectCard key={index} {...project} />;
+                            return  <ProjectCard key={index} {...project} />;
                           })}
-                        </Row>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey='section'>
-                        <p>
-                          Not sure if this tab will be kept either. I may just
-                          delete the tabs and link my app's directly to the
-                          screenshots
-                        </p>
-                      </Tab.Pane>
-                      <Tab.Pane eventKey='third'>
-                        <p>
-                          Not sure if this tab will be kept either. I may just
-                          delete the tabs and link my app's directly to the
-                          screenshots
-                        </p>
-                      </Tab.Pane>
+                        </Row> */}
                     </Tab.Content>
                   </Tab.Container>
                 </div>
