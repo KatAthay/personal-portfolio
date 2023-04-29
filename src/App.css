@@ -375,7 +375,56 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
   display: flex;
   flex-wrap: wrap;
 }
+.project i {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.projects-icon {
+  width: 30px; /* change this value to make the icon larger or smaller */
+  height: 30px;
+}
+.project-card-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: -50px;
+}
 
+.project-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+}
+
+.project-container img {
+  width: 100%;
+  height: auto;
+}
+
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 50px;
+}
+
+
+.projects-icon-spacer {
+  display: inline-block;
+  width: 1rem; /* adjust as needed */
+  position: relative;
+}
+
+.projects-icon-spacer::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #000;
+}
 
 .project h2 {
 	font-size: 45px;

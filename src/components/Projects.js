@@ -3,6 +3,8 @@ import { ProjectCard } from './ProjectCard';
 import colorSharp2 from '../assets/img/color-sharp2.png';
 import Mixuxe from '../assets/img/Mixuxe.png';
 import Twitter from '../assets/img/twitter.png';
+import GithubIcon from '../assets/img/nav-icon2.svg';
+import GlobeIcon from '../assets/img/globe.svg';
 import InterviewTracker from '../assets/img/InterviewTracker.png';
 import Ad3lie from '../assets/img/Ad3lie.png';
 import 'animate.css';
@@ -16,6 +18,8 @@ export const Projects = () => {
       imgUrl: Mixuxe,
       websiteLink: 'https://katathay.github.io/Mixuxe/',
        githubLink: 'https://github.com/KatAthay/Mixuxe',
+       iconUrl: GithubIcon,
+       iconUrl2: GlobeIcon,
     },
     {
       title: 'Nemesis',
@@ -24,6 +28,8 @@ export const Projects = () => {
       imgUrl: Twitter,
       websiteLink: 'https://katathay.github.io/Mixuxe/',
       githubLink: 'https://github.com/KatAthay/Mixuxe',
+      iconUrl: GithubIcon,
+      iconUrl2: GlobeIcon,
     },
     {
       title: 'Application & Algo Tracker',
@@ -32,6 +38,8 @@ export const Projects = () => {
       imgUrl: InterviewTracker,
       websiteLink: 'https://katathay.github.io/Mixuxe/',
       githubLink: 'https://github.com/KatAthay/Mixuxe',
+      iconUrl: GithubIcon,
+      iconUrl2: GlobeIcon,
     },
     {
       title: 'Ad3lie',
@@ -39,6 +47,9 @@ export const Projects = () => {
       imgUrl: Ad3lie,
       websiteLink: 'https://www.ad3lie.dev',
       githubLink: 'https://github.com/oslabs-beta/ad3lie',
+      iconUrl: GithubIcon,
+      iconUrl2: GlobeIcon,
+     
     },
   ];
 
@@ -67,22 +78,36 @@ export const Projects = () => {
                         isVisible ? 'animate__animated animate__slideInUp' : ''
                       }
                     >
-                    
+                    <Row>
                       {projects.map((project, index) => (
-                          <div key={index} className="mb-5">
+                          // <div key={index} className="mb-5">
+                          <Col key={index} md={8} lg={6}>
                             <ProjectCard {...project} />
-                            <div className="d-flex justify-content-center">
-                              <a href="#website-link">Website Link</a>
-                              <span className="mx-2">|</span>
-                              <a href="#github-link">GitHub Link</a>
+                            <div className="d-flex justify-content-center porject">
+                              <a href="#website-link">
+                              <img
+                                className='projects-icon '
+                                src={project.iconUrl2} // use the iconUrl property of the project object to display the image
+                                alt='Website Link'
+                              />
+                              </a>
+                              {/* <span style={{ borderRight: '2px solid #000', height: '10em', display: 'inline-block', marginRight: '10px', marginLeft: '10px' }}>|</span> */}
+                              <span className="mx-3 projects-icon-spacer"></span>
+
+
+                              {/* <span className="mx-3">|</span> */}
+                              <a href="#github-link">
+                              <img
+                                className='projects-icon'
+                                src={project.iconUrl} // use the iconUrl property of the project object to display the image
+                                alt='GitHub Link'
+                              />
+                              </a>
                             </div>
-                          </div>
+                          {/* </div> */}
+                          </Col>
                         ))}
-                        {/* <Row>
-                          {projects.map((project, index) => {
-                            return  <ProjectCard key={index} {...project} />;
-                          })}
-                        </Row> */}
+                        </Row>
                     </Tab.Content>
                   </Tab.Container>
                 </div>
